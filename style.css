@@ -503,11 +503,21 @@
 
 /* =========================
    MOBILE RESPONSIVE ONLY
+   Original desktop CSS remains unchanged
    ========================= */
 
 @media (max-width: 600px) {
 
-    /* Navbar */
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* =========================
+       NAVBAR
+       ========================= */
+
     nav {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -516,12 +526,20 @@
 
     .logo {
         justify-content: center;
+        width: 100%;
     }
 
     .nav-btn {
         justify-content: center;
-        margin-left: 0;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 8px;
+        margin-left: 0;
+    }
+
+    .nav-btn h4 {
+        padding: 8px 14px;
+        font-size: 14px;
     }
 
     .site-name {
@@ -529,9 +547,12 @@
         font-size: 16px;
     }
 
+    /* =========================
+       HERO
+       ========================= */
 
-    /* Hero */
     #hero {
+        width: 100%;
         flex-direction: column;
         gap: 20px;
         margin-top: 20px;
@@ -558,8 +579,10 @@
         margin-top: -25px;
     }
 
+    /* =========================
+       RIGHT SECTION
+       ========================= */
 
-    /* Right section */
     #right {
         width: 100%;
         height: auto;
@@ -571,11 +594,15 @@
     #right > h1 {
         font-size: 32px;
         margin: 15px 10px;
+        line-height: 1.2;
     }
 
+    /* =========================
+       CATEGORY BOXES
+       ========================= */
 
-    /* Category boxes */
     #container {
+        width: 100%;
         flex-direction: column;
         gap: 20px;
         margin-top: 25px;
@@ -586,6 +613,7 @@
         max-width: 280px;
         height: 260px;
         margin: 0 auto;
+        padding: 20px;
     }
 
     #box > h2 {
@@ -594,36 +622,107 @@
     }
 
     #box > p {
-        margin-top: 45px;
+        margin-top: 40px;
+        font-size: 14px;
     }
 
     #box button {
+        position: relative;
         margin-left: auto;
-        margin-right: 5px;
+        margin-right: 0;
+        margin-top: 5px;
     }
 
+    #box h6 {
+        font-size: 28px;
+    }
 
+    /* =========================
+       CARD / ABOUT SECTION
+       ========================= */
 
-    /* Questions page */
+    #card {
+        width: calc(100% - 30px);
+        height: auto;
+        margin: 30px 15px;
+        padding: 25px 20px;
+        border-radius: 30px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        width: 100%;
+        min-width: 0;
+        height: 280px;
+        border-radius: 25px;
+    }
+
+    .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .info {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 25px;
+    }
+
+    .info h1 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .info h3 {
+        font-size: 22px;
+    }
+
+    #contact {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #contact h5,
+    #contact h5 a {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    /* =========================
+       HOME / BACK BUTTON
+       ========================= */
+
     #home-title {
         width: 180px;
         height: 55px;
         margin: 15px;
+        padding: 8px;
+    }
+
+    #home-title button {
+        width: 35px;
+        height: 35px;
     }
 
     #home-title h4 {
         font-size: 18px;
+        margin-left: 12px;
     }
 
-    #home-title button {
-        height: 35px;
-        width: 35px;
+    #home-title h6 {
+        font-size: 18px;
     }
 
+    /* =========================
+       QUIZ
+       ========================= */
 
-    /* Quiz */
     .quiz-section {
         width: calc(100% - 24px);
+        max-width: none;
         margin: 10px auto;
         padding: 20px 15px;
         border-radius: 20px;
@@ -632,11 +731,17 @@
     #question {
         font-size: 18px;
         line-height: 1.4;
+        word-wrap: break-word;
     }
 
     .quiz-section label {
         padding: 12px;
         font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .quiz-section li {
+        margin-bottom: 10px;
     }
 
     #btn {
@@ -647,5 +752,52 @@
     #submit {
         width: 100%;
         padding: 13px;
+    }
+}
+
+
+/* =========================
+   EXTRA SMALL PHONES
+   ========================= */
+
+@media (max-width: 380px) {
+
+    .site-name {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .nav-btn h4 {
+        padding: 7px 11px;
+        font-size: 13px;
+    }
+
+    #left {
+        height: 270px;
+    }
+
+    #left > h1 {
+        font-size: 60px;
+    }
+
+    #left span {
+        font-size: 110px;
+        margin-top: -50px;
+    }
+
+    #left p {
+        font-size: 18px;
+    }
+
+    #right > h1 {
+        font-size: 27px;
+    }
+
+    #box {
+        max-width: 250px;
+    }
+
+    .info h1 {
+        font-size: 36px;
     }
 }
